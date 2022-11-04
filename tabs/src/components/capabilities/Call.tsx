@@ -9,8 +9,16 @@ export const Call = () => {
         return (
             <Button onClick={async () => {
                 await call.startCall({
-                    targets: ['AdeleV@6plbfs.onmicrosoft.com', 'AlexW@6plbfs.onmicrosoft.com'],
-                    requestedModalities: [call.CallModalities.Audio]
+                    targets: [
+                        'AdeleV@6plbfs.onmicrosoft.com',
+                        'AlexW@6plbfs.onmicrosoft.com'
+                    ],
+                    requestedModalities: [
+                        call.CallModalities.Audio,
+                        call.CallModalities.Video,
+                        call.CallModalities.VideoBasedScreenSharing,
+                        call.CallModalities.Data
+                    ]
                 })
             }}>
                 Start Call

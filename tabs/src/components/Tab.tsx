@@ -21,11 +21,12 @@ import { StageView, StageViewIsSupported } from "./capabilities/StageView";
 import { TeamsCore, TeamsCoreIsSupported } from "./capabilities/TeamsCore";
 import { Video, VideoIsSupported } from "./capabilities/Video";
 import { WebStorage, WebStorageIsSupported } from "./capabilities/WebStorage";
+import { App, AppIsSupported } from "./capabilities/App";
 
 const Tab = () => {
   const { themeString } = useContext(TeamsFxContext);
 
-  const header = {
+  const header: Fluent.ShorthandValue<Fluent.TableRowProps> = {
     key: 'header',
     items: [
       { key: 'capability', content: 'Capability' },
@@ -34,11 +35,19 @@ const Tab = () => {
     ]
   };
 
-  const [showSupportedOnly, setShowSupportedOnly] = useState(false);
+  const [showSupportedOnly, setShowSupportedOnly] = useState(true);
   const [tableRows, setTableRows] = useState([] as Fluent.ShorthandCollection<Fluent.TableRowProps, Record<string, {}>>);
 
   useEffect(() => {
     const defaultRows = [
+      {
+        key: 0,
+        items: [
+          { key: '0-1', content: 'App' },
+          { key: '0-2', content: AppIsSupported() },
+          { key: '0-3', content: <App /> }
+        ]
+      },
       {
         key: 1,
         items: [

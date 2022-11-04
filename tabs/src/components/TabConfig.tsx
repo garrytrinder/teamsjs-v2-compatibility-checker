@@ -36,6 +36,15 @@ class TabConfig extends React.Component {
        * dialog.
        */
       pages.config.setValidityState(true);
+
+      // register handler for config change event
+      pages.config.registerChangeConfigHandler(() => {
+        console.log("onChangeConfigHandler");
+      });
+      // register handler for tab remove event
+      pages.config.registerOnRemoveHandler(() => {
+        console.log("onRemoveHandler");
+      });
     });
 
     return (

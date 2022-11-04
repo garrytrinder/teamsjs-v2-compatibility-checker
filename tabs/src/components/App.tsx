@@ -9,8 +9,6 @@ import "./App.css";
 import TabConfig from "./TabConfig";
 import { TeamsFxContext } from "./Context";
 import DialogPage from "./DialogPage";
-import { useEffect, useState } from "react";
-import { app } from "@microsoft/teams-js";
 
 /**
  * The main app which handles the initialization and routing
@@ -18,13 +16,7 @@ import { app } from "@microsoft/teams-js";
  */
 const App = () => {
   const { loading, theme, themeString, teamsfx } = useTeamsFx();
-  const [appInitialized, setAppInitialized] = useState(false);
-  useEffect(() => {
-    app.initialize().then(() => {
-      setAppInitialized(true);
-    });
-  });
-  if (!appInitialized) { return (<></>) };
+
   return (
     <TeamsFxContext.Provider value={{ theme, themeString, teamsfx }}>
       <Provider theme={theme || teamsTheme} styles={{ backgroundColor: "#eeeeee" }}>

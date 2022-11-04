@@ -18,4 +18,4 @@ export const BarCode = () => {
     return (<></>);
 }
 
-export const BarCodeIsSupported = () => booleanToString(barCode.isSupported());
+export const BarCodeIsSupported = async () => booleanToString(barCode.isSupported());

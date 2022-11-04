@@ -8,8 +8,9 @@ export const AppInstallDialog = () => {
         // return button to open dialog
         return (
             <Button onClick={async () => {
+                // open the install dialog for the Developer Portal app
                 await appInstallDialog.openAppInstallDialog({
-                    appId: 'com.microsoft.teamspace.tab.youtube'
+                    appId: '14072831-8a2a-4f76-9294-057bf0b42a68'
                 });
             }}>
                 Open App Install Dialog
