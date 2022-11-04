@@ -22,6 +22,7 @@ import { TeamsCore, TeamsCoreIsSupported } from "./capabilities/TeamsCore";
 import { Video, VideoIsSupported } from "./capabilities/Video";
 import { WebStorage, WebStorageIsSupported } from "./capabilities/WebStorage";
 import { App, AppIsSupported } from "./capabilities/App";
+import packageJSON from "../../package.json";
 
 const Tab = () => {
   const { themeString } = useContext(TeamsFxContext);
@@ -214,11 +215,16 @@ const Tab = () => {
     <div className={themeString === "default" ? "" : "dark"}>
       <Fluent.Flex column={true} gap={"gap.small"} padding={"padding.medium"}>
         <Fluent.Segment>
-          <Fluent.Checkbox
-            label="Show supported only"
-            checked={showSupportedOnly}
-            onClick={() => setShowSupportedOnly(!showSupportedOnly)}
-            toggle />
+          <Fluent.Flex space="between">
+            <Fluent.Checkbox
+              label="Show supported only"
+              checked={showSupportedOnly}
+              onClick={() => setShowSupportedOnly(!showSupportedOnly)}
+              toggle />
+            <Fluent.Flex gap="gap.small">
+              <Fluent.Label>{packageJSON.dependencies["@microsoft/teams-js"]}</Fluent.Label>
+            </Fluent.Flex>
+          </Fluent.Flex>
         </Fluent.Segment>
         <Fluent.Segment>
           <Fluent.Table
@@ -226,8 +232,8 @@ const Tab = () => {
             header={header}
             rows={tableRows} />
         </Fluent.Segment>
-      </Fluent.Flex>
-    </div>
+      </Fluent.Flex >
+    </div >
   );
 }
 
