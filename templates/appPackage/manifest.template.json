@@ -25,21 +25,38 @@
     "accentColor": "#FFFFFF",
     "bots": [],
     "composeExtensions": [],
-    "configurableTabs": [],
     "staticTabs": [
         {
             "entityId": "index0",
-            "name": "Personal Tab",
+            "name": "Capabilities",
             "contentUrl": "{{{config.manifest.fx-resource-frontend-hosting.endpoint}}}{{{config.manifest.fx-resource-frontend-hosting.indexPath}}}/tab",
             "websiteUrl": "{{{config.manifest.fx-resource-frontend-hosting.endpoint}}}{{{config.manifest.fx-resource-frontend-hosting.indexPath}}}/tab",
             "scopes": [
-                "personal"
+                "personal",
+                "team"
+            ]
+        },
+        {
+            "entityId": "privacy1",
+            "name": "Privacy",
+            "contentUrl": "{{{config.manifest.fx-resource-frontend-hosting.endpoint}}}{{{config.manifest.fx-resource-frontend-hosting.indexPath}}}/privacy",
+            "websiteUrl": "{{{config.manifest.fx-resource-frontend-hosting.endpoint}}}{{{config.manifest.fx-resource-frontend-hosting.indexPath}}}/privacy",
+            "scopes": [
+                "personal",
+                "team"
             ]
         }
     ],
     "permissions": [
         "identity",
         "messageTeamMembers"
+    ],
+    "devicePermissions": [
+        "geolocation",
+        "media",
+        "notifications",
+        "midi",
+        "openExternal"
     ],
     "validDomains": [
         "{{config.manifest.fx-resource-frontend-hosting.domain}}"
