@@ -13,11 +13,6 @@
         "icons": {
             "color": "resources/color.png",
             "outline": "resources/outline.png"
-        },
-        "fx-resource-frontend-hosting": {
-            "indexPath": "/index.html#",
-            "endpoint": "https://192.168.4.35:53000",
-            "domain": "192.168.4.35"
         }
     }
 }

@@ -29,8 +29,8 @@
         {
             "entityId": "index0",
             "name": "Capabilities",
-            "contentUrl": "{{{config.manifest.fx-resource-frontend-hosting.endpoint}}}{{{config.manifest.fx-resource-frontend-hosting.indexPath}}}/tab",
-            "websiteUrl": "{{{config.manifest.fx-resource-frontend-hosting.endpoint}}}{{{config.manifest.fx-resource-frontend-hosting.indexPath}}}/tab",
+            "contentUrl": "{{state.fx-resource-frontend-hosting.endpoint}}{{state.fx-resource-frontend-hosting.indexPath}}/tab",
+            "websiteUrl": "{{state.fx-resource-frontend-hosting.endpoint}}{{state.fx-resource-frontend-hosting.indexPath}}/tab",
             "scopes": [
                 "personal",
                 "team"
@@ -39,8 +39,8 @@
         {
             "entityId": "privacy1",
             "name": "Privacy",
-            "contentUrl": "{{{config.manifest.fx-resource-frontend-hosting.endpoint}}}{{{config.manifest.fx-resource-frontend-hosting.indexPath}}}/privacy",
-            "websiteUrl": "{{{config.manifest.fx-resource-frontend-hosting.endpoint}}}{{{config.manifest.fx-resource-frontend-hosting.indexPath}}}/privacy",
+            "contentUrl": "{{state.fx-resource-frontend-hosting.endpoint}}{{state.fx-resource-frontend-hosting.indexPath}}/privacy",
+            "websiteUrl": "{{state.fx-resource-frontend-hosting.endpoint}}{{state.fx-resource-frontend-hosting.indexPath}}/privacy",
             "scopes": [
                 "personal",
                 "team"
@@ -59,7 +59,7 @@
         "openExternal"
     ],
     "validDomains": [
-        "{{config.manifest.fx-resource-frontend-hosting.domain}}"
+        "{{state.fx-resource-frontend-hosting.domain}}"
     ],
     "webApplicationInfo": {
         "id": "{{state.fx-resource-aad-app-for-teams.clientId}}",
